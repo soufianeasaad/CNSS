@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Portail des professionnels de santé</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('CNSS/C:/Users/admin/Desktop/CNSS/image/backg.png');
+            background-size: cover;
+            background-position: left;
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .wrapper {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+            margin-left: 150px; 
+
+        }
+        h2 {
+            margin-bottom: 50px;
+            color: rgb(51, 51, 112);
+        }
+        .input-box {
+            position: relative;
+            margin-bottom: 30px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .input-box .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        .forgot-pass {
+            margin-bottom: 20px;
+        }
+        .forgot-pass a {
+            color: midnightblue;
+            text-decoration: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: midnightblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h2>Se connecter</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" placeholder="Identifiant" required>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" placeholder="Mot de passe" required>
+            </div>
+            <div class="forgot-pass">
+                <a href="#">Mot de passe oublié</a>
+            </div>
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
