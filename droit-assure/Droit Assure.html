@@ -5,158 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Droit des Assurés</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            height: 100vh;
-            background-color: #e2dede;
-        }
-        .nav {
-            background-color: #004080;
-            width: 300px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 10px;
-            border: none;
-        }   
-        .sidebar {
-            width: 250px;
-            background-color: #160b7c;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            padding-left: 10px;
-        }
-        .sidebar img {
-            margin-bottom: 40px;
-            margin-left: -10px;
-        }
-        .logo {
-            width: 150px;
-            height: 100px;
-            object-fit: cover;
-            background-color: transparent;
-        }
-        .sidebar a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            padding: 12px 5px;
-            display: flex;
-            align-items: center;
-            margin-left: -5px;
-            margin-bottom: 10px; 
-        }
-        .sidebar a:first-of-type {
-            margin-top: 20px; 
-        }
-        .sidebar a:hover {
-            background-color: #310080;
-            padding-left: 15px;
-            transition: 0.3s;
-        }
-        .sidebar a i {
-            margin-right: 10px;
-            margin-left: 5px;
-        }
-        .main-content {
-            flex: 1;
-            padding: 30px;
-            background-color: #ffffff94;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .main-content h2 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: bold;
-        }  
-        .table-container {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .table-container h3 {
-            margin-bottom: 20px;
-            font-size: 18px;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table th, table td {
-            text-align: left;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        table th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
+    <link rel="stylesheet" href="DroitAssure.css">
 </head>
 <body>
+    <!-- Barre latérale -->
     <div class="sidebar">
         <img src="C:/Users/admin/Desktop/CNSS/image/cnss.jpg" alt="Logo" class="logo">
         <a href="C:/Users/admin/Desktop/CNSS/acceuil/Identifier.html"><i class="bx bx-home"></i>Accueil</a>
         <a href="#"><i class="bx bx-check-square"></i>Droit des Assurés</a>
         <a href="C:/Users/admin/Desktop/CNSS/suivi-pec/Suivie Pec.html"><i class="bx bx-wallet"></i>Suivi des PEC</a>
-        <a href="C:/Users/admin/Desktop/CNSS/suivi-droit-rembrour/Suivie D R.html"><i class="bx bx-log-out"></i>Suivi des dossiers de rembourssement</a>
+        <a href="C:/Users/admin/Desktop/CNSS/suivi-droit-rembrour/Suivie D R.html"><i class="bx bx-log-out"></i>Suivi des dossiers de remboursement</a>
         <a href="C:/Users/admin/Desktop/CNSS/suivi-paiement/Suivie paiement.html"><i class="bx bx-log-out"></i>Suivi des paiements</a>
         <a href="C:/Users/admin/Desktop/CNSS/deconnexion/deconnexion.html"><i class="bx bx-log-out"></i>Se déconnecter</a>
     </div>
-    <div class="main-content">
-    <title>Changer Taille du Titre</title>
-    <style>
-    </style>
-</head>
-<body>
-    <h1 class="titre">Droit des Assurés</h1>
-</body>
-</html>
-            <table class="form-table">
-                    <th>N° CNSS</th>
-                    <td>
-                        <input type="text" name="num-cnss">
-                        <button type="button">Valider</button>
-                    </td>
-                    <th>CNIE / Carte Séjour</th>
-                    <td>
-                        <input type="text" name="cnie">
-                        <button type="button">Valider</button>
-    <title>Bouton Bleu</title>
-    <style>
-        button {
-            background-color:  #160b7c; 
-            color: white; 
-            border: none; 
-            padding: 10px 20px;
-            font-size: 16px; 
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3; 
-        }
-        button:active {
-            background-color: #004085; 
-        }
-    </style>
-</head>
-<body>
-</body>
 
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <h1 class="titre">Droit des Assurés</h1>
+
+        <!-- Formulaire de filtre -->
+        <table class="form-table">
+            <tr>
+                <th>N° CNSS</th>
+                <td>
+                    <input type="text" name="num-cnss" id="matricule">
+                    <button type="submit">Valider</button>
+                </td>
+            </tr>
+            <tr>
+                <th>CNIE / Carte Séjour</th>
+                <td>
+                    <input type="text" name="cnie">
+                    <button type="button">Valider</button>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Tableau vide -->
+        <table  class="data-table" border="1">
+            <thead>
+                <tr>
+                    <th>Relation</th>
+                    <th>Nom</th>
+                    <th>Individu Numero</th>
+                    <th>Droit</th>
+                    <th>Date debut</th>
+                    <th>Date fin</th>
+                </tr>
+            </thead>
+            <tbody id="droitTable">
+                <!-- Lignes dynamiques à ajouter -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="droit.js"></script>
+</body>
 </html>
+s

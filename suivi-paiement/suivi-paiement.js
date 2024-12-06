@@ -1,7 +1,7 @@
 // Fonction pour récupérer les données de l'API et les afficher dans le tableau
-async function fetchSuiviPEC(matricule) {
+async function fetchSuiviPaiement(matricule) {
     try {
-        const response = await fetch(`http://localhost:9091/api/portail-cnss/suivi-pec/all/${matricule}`, {
+        const response = await fetch(`http://localhost:9091/api/portail-cnss/paiement/all/${matricule}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,20 +22,19 @@ async function fetchSuiviPEC(matricule) {
 
 // Fonction pour remplir le tableau avec les données
 function populateTable(data) {
-    const tableBody = document.querySelector('table tbody');
+    const tableBody = document.getElementById('paiementTable');
     tableBody.innerHTML = ''; // Vider le tableau avant d'ajouter les nouvelles données
 
     data.forEach((item) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${item.assure.matricule}</td>
-            <td>${item.assure.nom}</td>
-            <td>${item.numeroPEC}</td>
-            <td>${item.dateReception}</td>
-            <td>${item.montantDemende}</td>
-            <td>${item.montantAccorde || '-'}</td>
-            <td>${item.situationPEC}</td>
-            <td>${item.dateSituattion || '/'}</td>
+            <td>${item.suiviDossier.assure.matricule}</td>
+            <td>${item.suiviDossier.assure.nom}</td>
+            <td>${item.suiviDossier.numero}</td>
+            <td>${item.montantPaye}</td>
+            <td>${item.montantAccorde}</td>
+            <td>${item.dateSoin || '-'}</td>
+            <td>${item.situation}</td>
         `;
         tableBody.appendChild(row);
     });
@@ -46,7 +45,7 @@ document.querySelector('button[type="submit"]').addEventListener('click', (e) =>
     e.preventDefault(); // Empêche le rechargement de la page
     const matricule = document.getElementById('matricule').value;
     if (matricule) {
-        fetchSuiviPEC(matricule);
+        fetchSuiviPaiement(matricule);
     } else {
         alert('Veuillez entrer un matricule.');
     }

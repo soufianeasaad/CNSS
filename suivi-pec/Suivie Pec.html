@@ -7,42 +7,9 @@
     <title>Suivi des PEC</title>
     <link rel="stylesheet" href="C:/Users/admin/Desktop/CNSS/style.css">
     <link rel="stylesheet" href="suivipec.css">
-</head>
-<body>
-    <div class="sidebar">
-        <img src="C:/Users/admin/Desktop/CNSS/image/cnss.jpg" alt="Logo" class="logo">
-        <a href="C:/Users/admin/Desktop/CNSS/acceuil/Identifier.html"><i class="bx bx-home"></i>Accueil</a>
-        <a href="C:/Users/admin/Desktop/CNSS/droit-assure/Droit Assure.html"><i class="bx bx-check-square"></i>Droit des Assurés</a>
-        <a href="#"><i class="bx bx-wallet"></i>Suivi des PEC</a>
-        <a href="C:/Users/admin/Desktop/CNSS/suivi-droit-rembrour/Suivie D R.html"><i class="bx bx-log-out"></i>Suivi des dossiers de rembourssement</a>
-        <a href="C:/Users/admin/Desktop/CNSS/suivi-paiement/Suivie paiement.html"><i class="bx bx-log-out"></i>Suivi des paiements</a>
-        <a href="C:/Users/admin/Desktop/CNSS/deconnexion/deconnexion.html"><i class="bx bx-log-out"></i>Se déconnecter</a>
-    </div>
-    </div>
-    <div>
-    <title>Suivi des PEC</title>
-</head>
-<body>
-    <h1>Suivi des PEC</h1>
-    <table >
-        <div class="search-container">
-            <input type="text" placeholder="Immatricule" name="caracterise" id="matricule" required>
-            <input type="text" placeholder="Numéro des dossiers" name="num-dossier" required>
-            <input type="text" placeholder="Numéro des PEC" name="num-pec" required>
-            <select name="situation" required>
-                <option value="">Toutes</option>
-        
-                <option value="en_cours">En cours</option>
-                <option value="valide">Validé</option>
-                <option value="rejete">Rejeté</option>
-            </select>
-            <button type="submit">Rechercher</button>
-            <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouton Bleu</title>
     <style>
         button {
-            background-color:  #160b7c; 
+            background-color: #160b7c; 
             color: white; 
             border: none; 
             padding: 10px 20px;
@@ -51,33 +18,63 @@
             cursor: pointer;
         }
         button:hover {
-            background-color:#0056b3; 
+            background-color: #0056b3; 
         }
         button:active {
             background-color: #004085; 
         }
     </style>
-        </div>
-    </body>
-        <thead>
-            <tr>
-                <th>Numéro CNSS</th>
-                <th>Bénéficiaire</th>
-                <th>Numéro de la PEC</th>
-                <th>Date de réception</th>
-                <th>Montant demandé</th>
-                <th>Montant accordé</th>
-                <th>Situation de la PEC</th>
-                <th>Date de situation</th>
-            </tr>
-        </thead>
-        <tbody id="pectable">
-            <td></td>
-            
-        </tbody>
+</head>
+<body>
+    <!-- Barre latérale -->
+    <div class="sidebar">
+        <img src="C:/Users/admin/Desktop/CNSS/image/cnss.jpg" alt="Logo" class="logo">
+        <a href="C:/Users/admin/Desktop/CNSS/acceuil/Identifier.html"><i class="bx bx-home"></i>Accueil</a>
+        <a href="C:/Users/admin/Desktop/CNSS/droit-assure/Droit Assure.html"><i class="bx bx-check-square"></i>Droit des Assurés</a>
+        <a href="#"><i class="bx bx-wallet"></i>Suivi des PEC</a>
+        <a href="C:/Users/admin/Desktop/CNSS/suivi-droit-rembrour/Suivie D R.html"><i class="bx bx-log-out"></i>Suivi des dossiers de remboursement</a>
+        <a href="C:/Users/admin/Desktop/CNSS/suivi-paiement/Suivie paiement.html"><i class="bx bx-log-out"></i>Suivi des paiements</a>
+        <a href="C:/Users/admin/Desktop/CNSS/deconnexion/deconnexion.html"><i class="bx bx-log-out"></i>Se déconnecter</a>
+    </div>
 
-        <script src="suivipec.js"></script>
-    </table>
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <h1>Suivi des PEC</h1>
+
+        <!-- Section de recherche -->
+        <div class="search-container">
+            <input type="text" placeholder="Immatricule" name="caracterise" id="matricule" required>
+            <input type="text" placeholder="Numéro des dossiers" name="num-dossier" required>
+            <input type="text" placeholder="Numéro des PEC" name="num-pec" required>
+            <select name="situation" required>
+                <option value="">Toutes</option>
+                <option value="en_cours">En cours</option>
+                <option value="valide">Validé</option>
+                <option value="rejete">Rejeté</option>
+            </select>
+            <button type="submit">Rechercher</button>
+        </div>
+
+        <!-- Tableau des PEC -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Numéro CNSS</th>
+                    <th>Bénéficiaire</th>
+                    <th>Numéro de la PEC</th>
+                    <th>Date de réception</th>
+                    <th>Montant demandé</th>
+                    <th>Montant accordé</th>
+                    <th>Situation de la PEC</th>
+                    <th>Date de situation</th>
+                </tr>
+            </thead>
+            <tbody id="pectable">
+                <!-- Les données du tableau seront ajoutées dynamiquement ici -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="suivipec.js"></script>
 </body>
 </html>
-

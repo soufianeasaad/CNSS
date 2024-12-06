@@ -5,164 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suivi des paiements</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .nav {
-            background-color: #004080;
-            width: 300px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 10px;
-            border: none;
-        }   
-        .sidebar {
-            width: 250px;
-            background-color: #160b7c;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            padding-left: 10px;
-        }
-        .sidebar img {
-            margin-bottom: 40px;
-            margin-left: -10px;
-        }
-        .logo {
-            width: 150px;
-            height: 100px;
-            object-fit: cover;
-            background-color: transparent;
-        }
-        .sidebar a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            padding: 12px 5px;
-            display: flex;
-            align-items: center;
-            margin-left: -5px;
-            margin-bottom: 10px; 
-        }
-        .sidebar a:first-of-type {
-            margin-top: 20px; 
-        }
-        .sidebar a:hover {
-            background-color: #310080;
-            padding-left: 15px;
-            transition: 0.3s;
-        }
-        .sidebar a i {
-            margin-right: 10px;
-            margin-left: 5px;
-        }
-        .main-content {
-            flex: 1;
-            padding: 30px;
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .main-content h2 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: bold;
-        }  
-        .table-container {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .table-container h3 {
-            margin-bottom: 20px;
-            font-size: 18px;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table th, table td {
-            text-align: left;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        table th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
-</head>
-<body>
-    <div class="sidebar">
-        <img src="C:/Users/admin/Desktop/CNSS/image/cnss.jpg" alt="Logo" class="logo">
-        <a href="C:/Users/admin/Desktop/CNSS/acceuil/Identifier.html"><i class="bx bx-home"></i>Accueil</a>
-        <a href="C:/Users/admin/Desktop/CNSS/droit-assure/Droit Assure.html"><i class="bx bx-check-square"></i>Droit des Assurés</a>
-        <a href="C:/Users/admin/Desktop/CNSS/suivi-pec/Suivie Pec.html"><i class="bx bx-wallet"></i>Suivi des PEC</a>
-        <a href="C:/Users/admin/Desktop/CNSS/suivi-droit-rembrour/Suivie D R.html"><i class="bx bx-log-out"></i>Suivi des dossiers de rembourssement</a>
-        <a href="#"><i class="bx bx-log-out"></i>Suivi des paiements</a>
-        <a href="C:/Users/admin/Desktop/CNSS/deconnexion/deconnexion.html"><i class="bx bx-log-out"></i>Se déconnecter</a>
-    </div>
-    </div>
-    <div>
-    <title>Suivi des paiements</title>
-                <style>
-                    table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        margin: 20px 0;
-                    }
-                    th, td {
-                        border: 1px solid #ddd;
-                        padding: 8px;
-                        text-align: center;
-                    }
-                    th {
-                        background-color: #f2f2f2;
-                        font-weight: bold;
-                    }
-                    tr:nth-child(even) {
-                        background-color: #f9f9f9;
-                    }
-                    tr:hover {
-                        background-color: #ddd;
-                    }
-                </style>
-            </head>
-            <body>
-                <h1>Suivi des paiements</h1>
-                <table>
-                    <div class="search-container">
-                        <input type="text" placeholder="Immatricule" name="caracterise" required>
-                        <input type="text" placeholder="Numéro des dossiers" name="num-dossier" required>
-                        <select name="situation" required>
-                            <option value="">Toutes</option>
-                            <option value="en_cours">En cours</option>
-                            <option value="valide">Validé</option>
-                            <option value="rejete">Rejeté</option>
-                        </select>
-                        <button type="submit">Rechercher</button>
-                        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouton Bleu</title>
+    <link rel="stylesheet" href="suivi-paiement.css">
     <style>
         button {
-            background-color:  #160b7c; 
+            background-color: #160b7c; 
             color: white; 
             border: none; 
             padding: 10px 20px;
@@ -171,82 +17,61 @@
             cursor: pointer;
         }
         button:hover {
-            background-color:#0056b3; 
+            background-color: #0056b3; 
         }
         button:active {
             background-color: #004085; 
         }
     </style>
-                    </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Numéro CNSS</th>
-                            <th>Bénéficiaire</th>
-                            <th>Numéro du Dossier</th>
-                            <th>Montant Payé</th>
-                            <th>Montant Accordé</th>
-                            <th>Date de Soins</th>
-                            <th>Situation du Paiement</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>123456789</td>
-                            <td>Adil skali</td>
-                            <td>001-2024</td>
-                            <td>500 DH</td>
-                            <td>400 DH</td>
-                            <td>01/11/2024</td>
-                            <td>Payé</td>
-                        </tr>
-                        <tr>
-                            <td>987654321</td>
-                            <td>nadia lahlou</td>
-                            <td>002-2024</td>
-                            <td>800 DH</td>
-                            <td>650 DH</td>
-                            <td>10/11/2024</td>
-                            <td>Payé</td>
-                        </tr>
-                        <tr>
-                            <td>654321987</td>
-                            <td>Ahmed Ben Salah</td>
-                            <td>003-2024</td>
-                            <td>450 DH</td>
-                            <td>300 DH</td>
-                            <td>15/11/2024</td>
-                            <td>Payé</td>
-                        </tr>
-                        <tr>
-                            <td>321654987</td>
-                            <td>Fatima Zohra</td>
-                            <td>004-2024</td>
-                            <td>600 DH</td>
-                            <td>-</td>
-                            <td>20/11/2024</td>
-                            <td>En cours de traitement</td>
-                        </tr>
-                        <tr>
-                            <td>789123456</td>
-                            <td>Mohamed El Idrissi</td>
-                            <td>005-2024</td>
-                            <td>1200 DH</td>
-                            <td>-</td>
-                            <td>25/11/2024</td>
-                            <td>Refusé</td>
-                        </tr>
-                        <tr>
-                            <td>456789123</td>
-                            <td>khadija nabil</td>
-                            <td>006-2024</td>
-                            <td>700 DH</td>
-                            <td>400 DH</td>
-                            <td>30/11/2024</td>
-                            <td>Payé</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </body>
-            </html>
-            
+</head>
+<body>
+    <!-- Barre latérale -->
+    <div class="sidebar">
+        <img src="C:/Users/admin/Desktop/CNSS/image/cnss.jpg" alt="Logo" class="logo">
+        <a href="C:/Users/admin/Desktop/CNSS/acceuil/Identifier.html"><i class="bx bx-home"></i>Accueil</a>
+        <a href="C:/Users/admin/Desktop/CNSS/droit-assure/Droit Assure.html"><i class="bx bx-check-square"></i>Droit des Assurés</a>
+        <a href="C:/Users/admin/Desktop/CNSS/suivi-pec/Suivie Pec.html"><i class="bx bx-wallet"></i>Suivi des PEC</a>
+        <a href="C:/Users/admin/Desktop/CNSS/suivi-droit-rembrour/Suivie D R.html"><i class="bx bx-log-out"></i>Suivi des dossiers de remboursement</a>
+        <a href="#"><i class="bx bx-log-out"></i>Suivi des paiements</a>
+        <a href="C:/Users/admin/Desktop/CNSS/deconnexion/deconnexion.html"><i class="bx bx-log-out"></i>Se déconnecter</a>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <h1>Suivi des paiements</h1>
+
+        <!-- Section de recherche -->
+        <div class="search-container">
+            <input type="text" placeholder="Immatricule" name="caracterise" id="matricule" required>
+            <input type="text" placeholder="Numéro des dossiers" name="num-dossier" required>
+            <select name="situation" required>
+                <option value="">Toutes</option>
+                <option value="en_cours">En cours</option>
+                <option value="valide">Validé</option>
+                <option value="rejete">Rejeté</option>
+            </select>
+            <button type="submit">Rechercher</button>
+        </div>
+
+        <!-- Tableau des paiements -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Numéro CNSS</th>
+                    <th>Bénéficiaire</th>
+                    <th>Numéro du Dossier</th>
+                    <th>Montant Payé</th>
+                    <th>Montant Accordé</th>
+                    <th>Date de Soins</th>
+                    <th>Situation du Paiement</th>
+                </tr>
+            </thead>
+            <tbody id="paiementTable">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script src="suivi-paiement.js"></script>
+</body>
+</html>
