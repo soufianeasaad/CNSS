@@ -34,6 +34,8 @@ function populateTable(data) {
             <td>${item.montantPaye}</td>
             <td>${item.montantAccorde}</td>
             <td>${item.dateSoin || '-'}</td>
+            <td>${item.suiviDossier.dateDepot || '-'}</td>
+            <td>${item.datePaiement || '-'}</td>
             <td>${item.situation}</td>
         `;
         tableBody.appendChild(row);

@@ -98,3 +98,24 @@ table th {
 table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+.sidebar {
+    width: 250px;
+    background-color: #160b7c;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Permet de contrôler le positionnement */
+    padding: 20px 0; /* Ajuster l'espacement global */
+}
+
+.sidebar img {
+    margin: 50px 0 20px 0; /* Ajustez margin-top pour descendre le logo */
+}
+
+.logo {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    background-color: transparent;
+}
