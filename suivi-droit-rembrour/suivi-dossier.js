@@ -1,5 +1,5 @@
 // Fonction pour récupérer les données de l'API et les afficher dans le tableau
-async function fetchSuiviDossier(matricule) {
+async function fetchSuiviDossier(matricule,situation) {
     try {
         const response = await fetch(`http://localhost:9091/api/portail-cnss/suivi-dossier/all/${matricule}`, {
             method: 'GET',
@@ -13,12 +13,20 @@ async function fetchSuiviDossier(matricule) {
         }
 
         const data = await response.json();
-        // Appliquer le filtre de situation
-        /*const filteredData = situation
-            ? data.filter(item => item.situation.toLowerCase() === situation.toLowerCase())
-            : data;
-        console.log("-------------", filteredData)*/
+        console.log("+++++++++", data)
+         // Appliquer le filtre de situation
+    if (situation === "Toutes") {
         populateTable(data);
+      } else {
+        const filteredData = situation
+          ? data.filter(
+              (item) =>
+                item.situation &&
+                item.situation.toLowerCase() === situation.toLowerCase()
+            )
+          : data;
+        populateTable(filteredData);
+      }
     } catch (error) {
         console.error('Erreur:', error);
         alert('Impossible de récupérer les données. Veuillez vérifier le matricule.');
@@ -52,9 +60,10 @@ function populateTable(data) {
 document.querySelector('button[type="submit"]').addEventListener('click', (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
     const matricule = document.getElementById('matricule').value;
-    //const situation = document.querySelector('select[name="situation"]').value; 
+    const situation = document.querySelector('select[name="situation"]').value; 
     if (matricule) {
-        fetchSuiviDossier(matricule);
+        console.log("+++++++++++",situation)
+        fetchSuiviDossier(matricule,situation);
     } else {
         alert('Veuillez entrer un matricule.');
     }

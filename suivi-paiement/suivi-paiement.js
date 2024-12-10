@@ -13,7 +13,7 @@ async function fetchSuiviPaiement(matricule) {
         }
 
         const data = await response.json();
-        viderTable();
+        //viderTable();
         populateTable(data);
     } catch (error) {
         console.error('Erreur:', error);
@@ -35,7 +35,7 @@ async function fetchSuiviPaiementByNumDos(numDos) {
         }
 
         const data = await response.json();
-        viderTable();
+        //viderTable();
         populateTable(data);
     } catch (error) {
         console.error('Erreur:', error);
@@ -75,7 +75,6 @@ function viderTable() {
 document.querySelector('button[type="submit"]').addEventListener('click', (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
     const matricule = document.getElementById('matricule').value;
-    const situation = document.querySelector('select[name="situation"]').value; // Récupérer la valeur du filtre
     const numDos = document.getElementById('numDos').value; // Récupérer la valeur du filtre
     
 
@@ -83,7 +82,7 @@ document.querySelector('button[type="submit"]').addEventListener('click', (e) =>
         fetchSuiviPaiement(matricule);
     }  else if (numDos) {
         document.getElementById('matricule').innerHTML="";
-        viderTable();
+       // viderTable();
         fetchSuiviPaiementByNumDos(numDos);
         
     }
