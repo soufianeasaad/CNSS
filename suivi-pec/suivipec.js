@@ -1,5 +1,5 @@
 // Fonction pour récupérer les données de l'API et les afficher dans le tableau
-async function fetchSuiviPEC(matricule) {
+async function fetchSuiviPEC(matricule, situation) {
     try {
         const response = await fetch(`http://localhost:9091/api/portail-cnss/suivi-pec/all/${matricule}`, {
             method: 'GET',
@@ -13,6 +13,11 @@ async function fetchSuiviPEC(matricule) {
         }
 
         const data = await response.json();
+        // Appliquer le filtre de situation
+        const filteredData = situation
+            ? data.filter(item => item.situation.toLowerCase() === situation.toLowerCase())
+            : data;
+        console.log("-------------", filteredData)
         populateTable(data);
     } catch (error) {
         console.error('Erreur:', error);
@@ -45,8 +50,9 @@ function populateTable(data) {
 document.querySelector('button[type="submit"]').addEventListener('click', (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
     const matricule = document.getElementById('matricule').value;
+    const situation = document.querySelector('select[name="situation"]').value; 
     if (matricule) {
-        fetchSuiviPEC(matricule);
+        fetchSuiviPEC(matricule,situation);
     } else {
         alert('Veuillez entrer un matricule.');
     }

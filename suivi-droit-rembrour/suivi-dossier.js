@@ -13,6 +13,11 @@ async function fetchSuiviDossier(matricule) {
         }
 
         const data = await response.json();
+        // Appliquer le filtre de situation
+        /*const filteredData = situation
+            ? data.filter(item => item.situation.toLowerCase() === situation.toLowerCase())
+            : data;
+        console.log("-------------", filteredData)*/
         populateTable(data);
     } catch (error) {
         console.error('Erreur:', error);
@@ -47,6 +52,7 @@ function populateTable(data) {
 document.querySelector('button[type="submit"]').addEventListener('click', (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
     const matricule = document.getElementById('matricule').value;
+    //const situation = document.querySelector('select[name="situation"]').value; 
     if (matricule) {
         fetchSuiviDossier(matricule);
     } else {
