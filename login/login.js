@@ -16,26 +16,18 @@ async function login() {
         });
 
         if (response.ok) {
-            console.log("##########")
             const admin = await response.json();
             localStorage.setItem("admin", JSON.stringify(admin)); // Sauvegarde de l'admin dans localStorage
             
-            //alert("ErrorL")
-            //messageDiv.textContent = "Connexion réussie !";
-            //messageDiv.className = "success";
            setTimeout(() => {
                 window.location.href="../acceuil/Identifier.html"; // Redirection vers la page d'accueil
-            }, 1000);
+            }, 500);
         } else {
             const errorMessage = await response.text();
-            //messageDiv.textContent = errorMessage;
-            //messageDiv.className = "error";
-            alert("Error")
+            alert(errorMessage)
         }
     } catch (error) {
-        //messageDiv.textContent = "Erreur de connexion au serveur.";
-        //messageDiv.className = "error";
-        //alert("Erreur de connexion au serveur.")
+        alert("Erreur de connexion au serveur.")
     }
 }
 
@@ -43,7 +35,6 @@ const validerBtn = document.getElementById('validerBtn');
 validerBtn.addEventListener('click', function(event) {
     event.preventDefault();
     login()
-    //window.location.href="../acceuil/Identifier.html";
 }) ;
 
 

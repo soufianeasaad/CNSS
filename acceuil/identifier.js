@@ -2,6 +2,7 @@ function displayAdminInfo() {
     const admin = JSON.parse(localStorage.getItem("admin"));
     if (admin) {
         const tableBody = document.querySelector("table tbody");
+        tableBody.innerHTML = "";
         const row = document.createElement("tr");
         row.innerHTML = `
                 <td>${admin.nom}</td>
